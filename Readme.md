@@ -383,3 +383,44 @@ public static int sum(int a, int b){
     return total;   // Return the sum  
 }
 ```
+
+# Method Overloading in Java
+
+Method overloading is an important feature of  Object Oriented Programming  in Java. It allows us to define multiple methods with the  **same name but different parameters**.
+
+When a method is called, Java perform  overload resolution  using the number, type and order of parameters to determine the best  matching method.
+
+## Rules for Method Overloading:
+
+-   Method overloading is  _possible_  only when method has  _different parameters_.
+-   Method overloading is  _not possible_  by changing return type.
+-   Method overloading is  _possible_  by changing number of parameters.
+-   Method overloading is  _possible_  by changing type of parameters.
+-   Method overloading is  _possible_  by changing order of parameters.
+
+## Example:
+
+```
+class MethodOverloading{  
+    void add(int a, int b){
+        System.out.println(a + b);
+    }  
+    void add(int a, int b, int c){   
+        System.out.println(a + b + c);
+    }  
+    void add(double a, double b){  
+        System.out.println(a + b);
+    }  
+}
+
+```
+
+Here  `add()`  method is overloaded based on:
+
+-   Number of parameters
+-   Type of parameters
+
+## Benefits of Method Overloading:
+
+-   Provides reusability of method name.
+-   Makes code easy to read and understand.
