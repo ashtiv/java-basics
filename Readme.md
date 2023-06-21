@@ -499,3 +499,93 @@ switch(number) {
 ```
 
 The  `->`  arrow notation  visually represents the fall-through from one case to the next.
+
+# Loops in Java
+
+Loops allow us to execute a block of code repeatedly based on a condition.
+
+## While  Loop
+
+The  `while`  loop executes a block of statements as long as a condition is true:
+
+
+```
+while (condition) {
+   // code block to be executed
+}
+
+```
+
+Example:
+
+```
+int i = 1;
+while (i <= 5) {
+    System.out.println(i);
+    i++; 
+}
+// Prints 1 2 3 4 5
+
+```
+
+## Do-While Loop
+
+The  `do-while`  loop is similar but executes the block at least once, then checks the condition:
+
+java
+
+Copy
+
+```
+do {
+   // code block to be executed
+} while (condition);
+
+```
+
+Example:
+
+
+```
+int i = 6;
+do {
+   System.out.println(i);
+   i++;
+} while (i <= 5);
+// Prints 6
+
+```
+
+## For Loop
+
+The  `for`  loop has the following structure:
+
+```
+for (initialization; condition; increment) {
+    // code block to be executed
+}
+
+```
+
+-   `initialization`  happens once, before the loop
+-   `condition`  is checked each time before executing the block
+-   `increment`  is executed at the end of each loop
+
+Example:
+
+```
+for (int i = 1; i <= 5; i++) {
+   System.out.println(i);
+}
+// Prints 1 2 3 4 5
+
+```
+
+For loops are often used to iterate over arrays:
+
+
+```
+for (int i = 0; i < arr.length; i++) {
+   System.out.println(arr[i]); 
+}
+```
