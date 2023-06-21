@@ -1123,3 +1123,81 @@ So in summary:
 -   Instance variables/methods belong to objects and deal with object state
 -   Static variables/methods belong to the class and deal with class state
 -   Static  variables/methods exist independently of any object.
+
+# POJOs and Records in Java
+
+## POJOs
+
+-   POJO stands for  Plain Old Java Object
+    
+-   It is a Java object that does not extend any class other than Object
+    
+-   It has no dependencies on specific classes
+    
+-   POJOs have:
+    
+    -   Fields (properties)
+    -   Getters and setters for the fields
+    -   A no-arg constructor
+-   They are simple, lightweight objects used to transfer data.
+    
+
+Example:
+
+```
+public class User {
+  
+  private int id;
+  private String name;  
+  
+  // getters and setters
+  // no-arg constructor
+}
+
+```
+
+POJOs are commonly used:
+
+-   As form backings in  web applications
+-   For transferring data to/from databases
+-   For serialization
+
+## Records
+
+-   Records are a new Java language feature added in  Java 14
+-   Records are POJOs with some additional functionality:
+    -   Component-based access
+    -   Sensible  `toString()`,  `equals()`  and  `hashCode()`
+    -   A transparent constructor
+
+Example:
+
+
+```
+public record User(int id, String name) {}
+
+```
+
+-   This creates:
+    -   Fields  `id`  and  `name`
+    -   A constructor  `User(int id, String name)`
+    -   `toString()`,  `equals()`  and  `hashCode()`  methods
+    -   Accessors for the fields using  `User.this.id`  and  `User.this.name`
+
+We can create a record like:
+
+
+```
+User user = new User(1, "John");
+
+```
+
+And access fields using:
+
+```
+int id = user.id();
+
+```
+
+-   Records are immutable by default, fields cannot be reassigned
+-   We can make records mutable using  `with()`
