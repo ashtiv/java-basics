@@ -1201,3 +1201,105 @@ int id = user.id();
 
 -   Records are immutable by default, fields cannot be reassigned
 -   We can make records mutable using  `with()`
+
+# Annotations in Java
+
+Annotations are metadata that provide data about the code. They do not modify the code itself.
+
+Annotations have a  `@`  sign followed by an annotation name:
+
+```
+@Override
+@SuppressWarnings("unchecked")
+
+```
+
+Some common uses of annotations are:
+
+-   Compiler  checks -  `@Override`,  `@Deprecated`
+-   Frameworks -  `@Autowired`,  `@Entity`
+-   Documentation  -  `@param`,  `@return`
+
+## Declaring Annotations
+
+Annotations are declared using the  `@interface`  keyword:
+
+```
+@interface MyAnnotation {
+  // Attributes
+}
+
+```
+
+Attributes can be:
+
+-   Primitive types -  `int`,  `float`,  `boolean`
+-   Strings
+-   Enumerations
+-   Annotations
+-   Arrays of the above
+-   Class literals
+
+Example:
+
+
+```
+@interface Author {
+  String name(); 
+  int age() default 30;
+}
+
+```
+
+Here we have a  `String`  attribute  `name`  and an  `int`  attribute  `age`  with a default value.
+
+## Using Annotations
+
+We annotate classes, methods, fields:
+
+
+```
+@Author(name = "John")
+public class MyClass {
+    
+  @Author  
+  public void doSomething() {
+      
+  }
+}
+
+```
+
+We can retrieve annotations at runtime using reflection:
+
+
+```
+Author author = MyClass.class.getAnnotation(Author.class);
+String name = author.name();
+
+```
+
+## Built-in Annotations
+
+Java has some annotations built-in:
+
+-   `@Override`  - Checks that a method overrides its superclass
+-   `@Deprecated`  - Marks a method/class as deprecated
+-   `@SuppressWarnings`  - Suppresses compiler warnings
+
+## Retention Policy
+
+Annotations can have 3 retention policies:
+
+-   `SOURCE`  - Discarded after compilation
+-   `CLASS`  - Retained after compilation, available to classloader (default)
+-   `RUNTIME`  - Available at runtime through reflection
+
+We set the retention using  `@Retention`:
+
+```
+@Retention(RetentionPolicy.RUNTIME)
+public @interface MyAnnotation {
+  ...   
+}
+```
