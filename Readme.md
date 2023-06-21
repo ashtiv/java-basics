@@ -771,3 +771,77 @@ String name = sc.nextLine();
 ```
 
 The  `Scanner`  class also throws exceptions which we can catch in a  `try-catch`  block.
+
+# Reading Input  with Scanner
+
+As mentioned earlier, we can use the Scanner class to read user input from the console.
+
+Some key methods for reading input are:
+
+-   `nextLine()`: Reads the entire line of input and returns a String.
+
+```
+Scanner sc = new Scanner(System.in);
+String name = sc.nextLine();
+
+```
+
+-   `next()`: Reads the next token (separated by whitespace) and returns a String.
+
+```
+String word = sc.next();
+
+```
+
+-   `nextInt()`: Reads an int.
+
+```
+int age = sc.nextInt();
+
+```
+
+-   `nextDouble()`: Reads a double.
+
+```
+double gpa = sc.nextDouble();
+
+```
+
+-   `nextBoolean()`: Reads a boolean.
+
+
+```
+boolean isCorrect= sc.nextBoolean();
+
+```
+
+We can catch exceptions thrown by Scanner using a try-catch block:
+
+
+```
+try {    
+    int num = sc.nextInt(); 
+} catch (InputMismatchException e) {
+    // Handle exception  
+}
+
+```
+
+It is good practice to close the Scanner after use:
+
+
+```
+sc.close();
+
+```
+
+This releases the resources used by the Scanner. We can do this in a finally block:
+
+
+```
+try {
+    // read input 
+} finally {
+    sc.close(); 
+}
+```
