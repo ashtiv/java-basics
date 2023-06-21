@@ -1041,3 +1041,85 @@ So in summary:
 -   An object is an instance of a class
 -   An instance is a specific object created from a class
 -   A class defines the blueprint for objects.
+
+# Static vs Instance
+
+## Instance Variables
+
+-   Belong to objects (instances of a class)
+-   Each object has a separate copy of  instance variables
+-   Accessed using  object reference  (instance)
+-   Life cycle  - exist as long as the object exists
+-   Examples:
+    -   name
+    -   age
+    -   salary
+-   Declared as:
+
+```
+class Employee {
+  String name;  // instance variable
+  int age;
+}
+
+```
+
+## Static Variables
+
+-   Belong to the class
+-   Shared among all objects of that class
+-   Accessed using  class name, not a particular object
+-   Life cycle - exist as long as class is loaded
+-   Examples:
+    -   numberOfEmployees
+    -   taxRate
+-   Declared as:
+
+```
+class Employee {
+  static int numberOfEmployees;  // static variable  
+}
+
+```
+
+## Instance Methods
+
+-   Operate on instance variables
+-   Accessed using object reference
+-   Can access instance variables and other  instance methods
+-   Cannot access  static variables/methods directly
+-   Examples:
+    -   getSalary()
+    -   hireDate()
+-   Declared as:
+
+```
+public void getSalary() {
+  // use instance variables
+}
+
+```
+
+## Static Methods
+
+-   Accessed using class name
+-   Operate on static variables
+-   Can access static variables/methods
+-   Can access instance variables/methods using object reference
+-   Examples:
+    -   calculateSalary()
+    -   getTaxRate()
+-   Declared as:
+
+```
+public static int calculateSalary() {
+  // use static variables  
+}
+
+```
+
+So in summary:
+
+-   Instance variables/methods belong to objects and deal with object state
+-   Static variables/methods belong to the class and deal with class state
+-   Static  variables/methods exist independently of any object.
