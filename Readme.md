@@ -1303,3 +1303,151 @@ public @interface MyAnnotation {
   ...   
 }
 ```
+# Inheritance - Part 1
+
+Inheritance  allows us to define a class (called subclass) that inherits the properties and behaviours of another class (called  super class  or  parent class).
+
+The subclass inherits the:
+
+-   variables
+-   methods
+-   constructors  
+    from the superclass.
+
+The subclass can:
+
+-   add its own fields and methods in addition to the inherited ones.
+-   override the methods of the superclass.
+
+```
+class Superclass {
+    // variables, methods and constructors 
+}
+
+class Subclass extends Superclass {
+    // inherits variables, methods and constructors from Superclass 
+    // can add its own fields and methods  
+    // can override methods 
+}
+
+```
+
+# Inheritance - Part 2
+
+The  `extends`  keyword indicates that the subclass inherits from the superclass.
+
+In Java, a subclass can only inherit from a single superclass but the superclass can have multiple subclasses.
+
+Constructors are not inherited but the subclass constructor calls the  superclass constructor  using  `super()`.
+
+```
+class Animal {
+  
+}
+
+class Dog extends Animal {
+   
+}
+
+class Cat extends Animal {
+   
+}
+
+```
+
+# Inheritance - Part 3
+
+The subclass inherits the:
+
+-   private variables and methods of the superclass.
+-   But the subclass cannot directly access private members of the superclass.
+
+The subclass can access:
+
+-   protected
+-   public  
+    members of the superclass.
+
+# What is  java.lang.Object?
+
+java.lang.Object is the ultimate superclass for all classes in Java.
+
+Even if a class does not explicitly extend any class, it implicitly extends  `java.lang.Object`.
+For example:
+
+```
+class Dog {
+    
+}
+// Inherits from Object implicitly
+class Dog extends Object { 
+    
+}
+
+```
+
+The  `java.lang.Object`  class defines the most generic methods like:
+
+-   `equals()`  - compares two objects
+-   `hashCode()`  - returns the  hash code value  of an object
+-   `toString()`  - returns a string representation of an object
+-   `getClass()`  - returns the Class object
+-   `clone()`  - creates a clone of an object
+-   `finalize()`  - called by the  garbage collector  before an object is garbage collected
+
+All classes in Java inherit these methods from Object
+
+# Inheritance Challenge - Part 1
+
+Demonstrates defining subclasses and using inheritance in a simple sample program.
+
+# Inheritance Challenge Part 2
+
+Extends the previous inheritance example with additional logic and method overriding.
+
+# this vs super
+
+In the subclass, use  `super()`  to call the superclass constructor.
+
+Use  `super.method()`  to access the  superclass method  overridden in the subclass.
+
+Use  `this.member`  to access the  subclass fields  and methods.
+
+```
+class Animal {
+    String name;
+    
+    public Animal(String name) {
+        this.name = name;
+    }
+}
+
+class Dog extends Animal {
+    
+    public Dog(String name) {
+        super(name);  // Calls Animal constructor
+    }
+    
+    public void printName() {
+        System.out.println(this.name); // Accesses Dog's name field
+        System.out.println(super.name); // Accesses Animal's name field
+    }
+}
+
+Dog dog = new Dog("Tommy");
+dog.printName();
+
+```
+
+Output:
+
+
+```
+Tommy  
+Tommy
+
+```
+
+`this`  refers to the current object i.e. Dog instance.
+
+`super`  refers to the  super class  i.e. Animal. It allows the subclass to invoke the  superclass methods  and fields.
