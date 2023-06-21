@@ -424,3 +424,78 @@ Here  `add()`  method is overloaded based on:
 
 -   Provides reusability of method name.
 -   Makes code easy to read and understand.
+
+# The switch statement
+
+The  `switch`  statement in Java allows us to select one of many code blocks to execute. It provides an alternative to multiple  `if-else if`  statements.
+
+The basic syntax is:
+
+```
+switch (expression) {
+   case x: 
+      // code block  
+      break; 
+   case y:
+      // code block
+      break;  
+   default:
+      // code block
+}
+
+```
+
+We can make efficient  switch statements  by:
+
+-   Using the  `break`keyword only at the end of the last  `case`:
+
+
+```
+switch(expression) {
+  case 1:  
+  case 2: ->  
+     // code
+     break;    
+  case 3:  
+     // code 
+     break;    
+}
+
+```
+
+-   Omitting the  `default`  case if not needed.
+
+String values can also be used:
+
+
+```
+String day = "Monday";
+
+switch (day) {
+  case "Monday": ->
+     // code  
+     break;   
+  case "Friday": ->
+     // code  
+     break;    
+}
+
+```
+
+Example:
+```
+int number = 3;
+
+switch(number) {
+  case 1:  
+  case 2: ->  
+     System.out.println("Number is 1 or 2");       
+  case 3: ->
+     System.out.println("Number is 3");  
+}  
+// Number is 1 or 2     
+// Number is 3
+
+```
+
+The  `->`  arrow notation  visually represents the fall-through from one case to the next.
