@@ -281,4 +281,93 @@ int c =  a + b;
 -   Be consistent with your indentation (e.g. 4 spaces)
     
 
-Hope this helps! Let me know if you have any other questions.
+# Code Blocks And The If Then Else Control Statement in Java
+
+In this article we will discuss:
+
+-   Code blocks  in Java
+-   The if-then-else control statement
+-   Syntax and examples
+
+## Code Blocks
+
+A code block in Java is a group of zero or more statements between opening  `{`  and closing  `}`  brackets.
+
+-   Code blocks can be used anywhere a single statement is expected.
+-   Code blocks allow grouping multiple statements into a single statement.
+
+For example, the  `if-then-else`  statement requires a code block for its  `then`  and  `else`  parts:
+
+java
+
+Copy
+
+```
+if (condition) {
+    // code block - then part 
+    statement1;
+    statement2; 
+} else {
+    // code block - else part
+    statement3;
+    statement4;
+}
+
+```
+
+Code blocks are also used with  `for`,  `while`,  `do-while`,  `switch`  statements, method definitions, etc.
+
+## If-Then-Else Statement
+
+The  `if-then-else`  statement is Java's conditional statement. It has the following syntax:
+
+java
+
+Copy
+
+```
+if (condition) {
+    // code block - then part
+} else {
+    // code block - else part 
+}
+
+```
+
+The condition is evaluated, and if it evaluates to  `true`, the then part is executed. Otherwise the else part is executed.
+
+Example:
+
+java
+
+Copy
+
+```
+int number = 5;
+
+if (number % 2 == 0) {
+    System.out.println("Number is even.");
+} else {    
+    System.out.println("Number is odd.");  
+}
+// Prints "Number is odd."
+
+```
+
+You can use an  `if`  statement alone, without the  `else`  part.
+
+You can also nest  `if-else`  statements:
+
+java
+
+Copy
+
+```
+if (condition1) {
+    ...
+} else if (condition2){
+    ...
+} else {
+    ...
+}  
+```
