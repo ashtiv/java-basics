@@ -589,3 +589,73 @@ for (int i = 0; i < arr.length; i++) {
    System.out.println(arr[i]); 
 }
 ```
+# Local Variables and Scope in Java
+
+A variable declared within a method or block is called a local variable.
+
+The scope of a  local variable  is the region of the program where it can be referenced.
+
+For example:
+
+
+```
+class Test {
+   public void method1() {
+      int number = 10;  
+      // number is local to method1()
+   }
+   
+   public void method2() {
+      int number = 20;    
+      // number is local to method2()
+   }  
+}
+
+```
+
+Here,  `number`  is a local variable with scope within the method it is defined.
+
+It cannot be accessed outside of that method.
+
+## Block Scope
+
+A variable declared within a block  `{ }`  has  block scope  and is only accessible within that block:
+
+```
+void method() { 
+    int number = 10;
+    
+    if(number > 5) {
+        int result = number * 2;   
+        // result has block scope 
+    }
+    
+    // result cannot be accessed here
+}
+
+```
+
+## Shadowing
+
+When a local variable has the same name as a variable in an outer scope, it shadows the outer variable.
+
+The inner variable then takes precedence:
+
+```
+int number = 10;
+
+void method() {
+   int number = 20; 
+   System.out.println(number); // Prints 20
+}
+
+System.out.println(number); // Prints 10
+
+```
+
+Here, the  `number`  variable within  `method()`  shadows the outer  `number`  variable.
+
+## Lifetime
+
+A local variable exists from the time its declared until the closing  `}`  of the method or  block.  
+After that, it ceases to exist.
