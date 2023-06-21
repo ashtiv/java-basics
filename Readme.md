@@ -978,3 +978,66 @@ Here the second constructor calls  `this(brand)`  to call the first constructor,
 
 -   We must call  `this()`  as the first statement if chaining constructors
 -   It delegates the  object initialization  to another constructor.
+
+# Reference vs Object vs Instance vs Class
+
+## Reference
+
+-   A reference is a variable that holds the memory location of an object
+-   It does not contain the actual object, but refers to the memory location where the object is stored
+-   References are created when a new object is instantiated
+
+```
+Phone samsung = new Phone(); // samsung is a reference
+
+```
+
+Here  `samsung`  is a reference that refers to the memory location of the newly created  `Phone`  object.
+
+## Object
+
+-   An object is an instance of a class, with state and behavior
+-   It has identity, state and behavior
+-   An object is a  runtime entity  that occupies space in memory
+
+```
+Phone samsung = new Phone();
+
+```
+
+Here a  `Phone`  object is created and  `samsung`  refers to it.
+
+## Instance
+
+-   An instance is a specific object created from a  class blueprint
+-   A class is like a blueprint and an instance is a concrete object created based on that blueprint.
+
+
+```
+Phone samsung = new Phone(); 
+Phone apple = new Phone();
+
+```
+
+Here  `samsung`  and  `apple`  are two instances of the  `Phone`  class.
+
+## Class
+
+-   A class defines the state and behavior that objects of that class will have
+-   It is a template/blueprint that describes the nature of objects that can be created from it.
+
+```
+class Phone {
+   ...
+}
+
+```
+
+Here  `Phone`  is a class that defines the state and behavior for  `Phone`  objects.
+
+So in summary:
+
+-   A reference refers to an object
+-   An object is an instance of a class
+-   An instance is a specific object created from a class
+-   A class defines the blueprint for objects.
