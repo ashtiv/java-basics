@@ -916,3 +916,65 @@ myPhone.setBrand("Samsung");
 String brand = myPhone.getBrand();
 
 ```
+# Constructors in Java
+
+Constructors are special methods that initialize an object when it is created.
+
+## Constructor Part 1
+
+-   Constructors have the same name as the class
+-   Constructors are used to initialize object's state when it is created
+-   A  default constructor  is provided if no constructor is defined
+
+```
+class Phone {
+  
+  String brand;
+  
+  Phone(){  
+    // default constructor
+  }
+  
+  Phone(String brand){
+    this.brand = brand; 
+  }
+}
+
+```
+
+We can call the constructors when creating objects:
+
+```
+Phone p1 = new Phone();
+Phone p2 = new Phone("Apple");
+
+```
+
+## Constructor Part 2
+
+-   Multiple constructors can be defined with different parameters
+-   Constructors can call other constructors using  `this()`
+-   This is called  constructor chaining
+
+```
+class Phone{
+  
+  String brand;
+  String model;
+  
+  Phone(String brand){
+    this.brand = brand;  
+  }
+  
+  Phone(String brand, String model){
+    this(brand);
+    this.model = model; 
+  }
+}
+
+```
+
+Here the second constructor calls  `this(brand)`  to call the first constructor, then initializes the  `model`  field.
+
+-   We must call  `this()`  as the first statement if chaining constructors
+-   It delegates the  object initialization  to another constructor.
