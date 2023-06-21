@@ -28,7 +28,6 @@ Some examples of expressions:
 
 -   Arithmetic  expressions:
 
-Copy
 
 ```
 int a = 5 + 6;
@@ -38,7 +37,6 @@ int b = a * 2;
 
 -   Relational expressions:
 
-Copy
 
 ```
 a > b
@@ -48,7 +46,6 @@ a <= b
 
 -   Logical expressions:
 
-Copy
 
 ```
 a && b
@@ -58,7 +55,6 @@ a || b
 
 -   Assignment expressions:
 
-Copy
 
 ```
 a = b;
@@ -68,7 +64,6 @@ c += 5;
 
 -   Variable reference expressions:
 
-Copy
 
 ```
 String name;
@@ -78,7 +73,6 @@ name = "John";
 
 -   Increment/decrement expressions:
 
-Copy
 
 ```
 a++;
@@ -88,7 +82,6 @@ b--;
 
 -   Method call expressions:
 
-Copy
 
 ```
 max(a, b) 
@@ -121,10 +114,6 @@ A statement in Java performs some action and potentially changes the state of th
 
 -   Variable declarations:
 
-java
-
-Copy
-
 ```
 int number;
 String name;
@@ -132,10 +121,6 @@ String name;
 ```
 
 -   Assignment statements:
-
-java
-
-Copy
 
 ```
 number = 10;
@@ -145,9 +130,6 @@ name = "John";
 
 -   Method invocation statements:
 
-java
-
-Copy
 
 ```
 printMessage();
@@ -156,9 +138,6 @@ printMessage();
 
 -   if-else statements:
 
-java
-
-Copy
 
 ```
 if (number > 0){
@@ -171,9 +150,6 @@ if (number > 0){
 
 -   while loops:
 
-java
-
-Copy
 
 ```
 while(number < 100){
@@ -184,9 +160,6 @@ while(number < 100){
 
 -   for loops:
 
-java
-
-Copy
 
 ```
 for(int i = 0; i < 10; i++){
@@ -197,9 +170,6 @@ for(int i = 0; i < 10; i++){
 
 -   return statements:
 
-java
-
-Copy
 
 ```
 return number; 
@@ -208,9 +178,6 @@ return number;
 
 -   throw statements:
 
-java
-
-Copy
 
 ```
 throw new Exception("Error!");
@@ -232,9 +199,6 @@ Java is sensitive to whitespace and indentation:
 -   Inside string literals:
     
 
-java
-
-Copy
 
 ```
 String s = "This has   spaces"; 
@@ -242,10 +206,6 @@ String s = "This has   spaces";
 ```
 
 -   As separators between tokens:
-
-java
-
-Copy
 
 ```
 int a = b;  //Semicolon required
@@ -265,9 +225,6 @@ Some best practices regarding statements, whitespace and indentation in Java:
 -   Place each statement on a new line
     
 
-java
-
-Copy
 
 ```
 int a = 1;  
@@ -298,9 +255,6 @@ A code block in Java is a group of zero or more statements between opening  `{` 
 
 For example, the  `if-then-else`  statement requires a code block for its  `then`  and  `else`  parts:
 
-java
-
-Copy
 
 ```
 if (condition) {
@@ -321,9 +275,6 @@ Code blocks are also used with  `for`,  `while`,  `do-while`,  `switch`  stateme
 
 The  `if-then-else`  statement is Java's conditional statement. It has the following syntax:
 
-java
-
-Copy
 
 ```
 if (condition) {
@@ -338,9 +289,6 @@ The condition is evaluated, and if it evaluates to  `true`, the then part is exe
 
 Example:
 
-java
-
-Copy
 
 ```
 int number = 5;
@@ -358,10 +306,6 @@ You can use an  `if`  statement alone, without the  `else`  part.
 
 You can also nest  `if-else`  statements:
 
-java
-
-Copy
-
 ```
 if (condition1) {
     ...
@@ -370,4 +314,72 @@ if (condition1) {
 } else {
     ...
 }  
+```
+
+# Methods in Java
+
+Methods are functions that contain reusable blocks of code to perform a specific task.
+
+## Defining a Method
+
+To define a method in Java, we use the  `public`  and  `static`  access modifiers, followed by the  `return type`  of the method, the  `method name()`  and the list of  `parameters`  inside parentheses.
+
+The basic syntax is:
+
+```
+access-modifier return-type method-name(parameter-list){
+   // method body
+}  
+
+```
+
+For example:
+
+```
+public static int sum(int a, int b){
+    int total = a + b;
+    return total;
+}
+
+```
+
+Here:
+
+-   `public`  - Access modifier
+-   `static`  - Method can be accessed without creating an object
+-   `int`  - Return type
+-   `sum()`  - Method name
+-   `(int a, int b)`  - Parameters
+-   `{...}`  - Method body
+
+## Invoking a Method
+
+To invoke or call a method, use the  method name  and pass the arguments:
+
+```
+int result = sum(5, 10);  // Call the sum() method and pass 5 and 10 
+
+```
+
+## Method Parameters
+
+-   Parameters act as variables that store the values passed to the method.
+-   Parameters are specified inside the parentheses () after the method name.
+-   Parameters can be primitive types or reference types.
+-   Parameters are method-local; they exist only during the method call.
+
+## Return Type
+
+-   The  return type  specifies the data type returned by the method.
+-   `void`  is used for methods that do not return any value.
+-   We use the  `return`  statement to return a value from a non-void method.
+
+For example:
+
+
+```
+public static int sum(int a, int b){
+    int total = a + b;
+    return total;   // Return the sum  
+}
 ```
