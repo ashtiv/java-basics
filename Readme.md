@@ -845,3 +845,74 @@ try {
     sc.close(); 
 }
 ```
+# Classes and Objects in  Java
+
+## Introduction to Classes and Objects
+
+Classes allow us to model  real world objects, like  `Car`  or  `Phone`
+
+An object is an instance of a class, with its own properties and methods  
+A class defines the blueprint and objects are instances of that blueprint
+
+To define a class in Java:
+
+```
+class ClassName {
+   // variables 
+   // methods   
+}
+
+```
+
+Variables in a class are called fields (aka properties, attributes)  
+Methods define the behaviors of the object
+
+## Using  Getter  Methods
+
+Getter methods allow us to retrieve an object's field values  
+Getter methods have "get" in the name and return the field value
+
+```
+class Phone {
+   private string brand;
+
+   public string getBrand() {
+       return brand;
+   }
+}
+
+```
+
+## Using Setters
+
+Setter methods allow us to update an object's field values  
+Setter methods have "set" in the name and take a parameter
+```
+class Phone {
+    private string brand;
+    
+    public void setBrand(string newBrand) {
+        brand = newBrand;   
+    }
+}
+
+```
+
+## Creating Objects
+
+We create objects using the  `new`  keyword and the class name:
+
+
+```
+Phone myPhone = new Phone();
+
+```
+
+We can then call methods and access fields of that object:
+
+
+```
+myPhone.setBrand("Samsung");
+String brand = myPhone.getBrand();
+
+```
