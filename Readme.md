@@ -712,3 +712,62 @@ String passStr = String.valueOf(password);
 ```
 
 This will read the input and hide it on the console, storing it in a  character array.
+
+# Exception Handling with System.console()
+
+When reading input using  `System.console()`, exceptions can be thrown if the input is invalid.
+
+We can catch and handle these exceptions using a  `try-catch`  block:
+
+```
+try {
+    int age = console.readInt(); 
+} catch(InputMismatchException e) {
+    // Handle exception    
+}
+
+```
+
+This will catch if the user enters non-integer input and then we can handle the exception accordingly.
+
+We can also use the  `finally`  block to execute code regardless of whether an exception was thrown or not:
+```
+try {
+    // read input  
+} catch (Exception e) {
+  
+} finally {
+    // cleanup resources
+}
+
+```
+
+# Introduction to Scanner
+
+The  `Scanner`  class is another useful tool for reading  console input  in  Java.
+
+We can create a  `Scanner`  object from  `System.in`  which represents the standard input:
+
+```
+Scanner sc = new Scanner(System.in);
+
+```
+
+Then we can use various methods to read different types of input:
+
+-   `nextInt()`: Read integer
+-   `nextDouble()`: Read double
+-   `nextFloat()`: Read float
+-   `nextLine()`: Read entire line of input as String
+-   `next()`: Read next token (separated by whitespace)
+
+For example:
+
+```
+int a = sc.nextInt();
+double b = sc.nextDouble(); 
+String name = sc.nextLine();
+
+```
+
+The  `Scanner`  class also throws exceptions which we can catch in a  `try-catch`  block.
