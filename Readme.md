@@ -659,3 +659,56 @@ Here, the  `number`  variable within  `method()`  shadows the outer  `number`  v
 
 A local variable exists from the time its declared until the closing  `}`  of the method or  block.  
 After that, it ceases to exist.
+
+# Parsing Values and Reading Input using System.console()
+
+The  `System.console()`  method allows us to read input from the console in Java. It returns a  `Console`  object which has various methods to read input.
+
+## Reading String Input
+
+We can read a String input using the  `reader()`  method of the  `Console`  object:
+```
+Console console = System.console();
+
+String name = console.reader().readLine();
+
+```
+
+This will read a line of input from the console and store it in the  `name`  variable.
+
+## Reading Integer Input
+
+We can read an  `int`  input using the  `readInt()`  method:
+
+```
+Console console = System.console();
+
+int age = console.readInt();
+
+```
+
+This will read an integer from the console and store it in the  `age`  variable.
+
+It will throw an  `InputMismatchException`  if the input is not a valid integer.
+
+## Reading other types
+
+Similar methods exist to read  `long`,  `float`,  `double`,  `char`  etc. For example:
+```
+long no = console.readLong();
+float price = console.readFloat();
+char letter = console.readChar();
+
+```
+
+## Hiding Input
+
+To read a password or other  sensitive input, we can use the  `readPassword()`  method:
+
+```
+char[] password = console.readPassword();
+String passStr = String.valueOf(password);
+
+```
+
+This will read the input and hide it on the console, storing it in a  character array.
