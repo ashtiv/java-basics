@@ -2378,3 +2378,86 @@ threeD[x][y][z];
 ```
 
 The time and  space complexity  of accessing an element is O(1). However, traversing the entire multi-dimensional array has  time complexity  O(n^d) where  `n`  is the size of one dimension and  `d`  is the number of dimensions.
+## ArrayList
+
+An ArrayList is a resizable array. It implements the List interface.
+
+Some benefits of ArrayList over arrays are:
+
+-   Automatic expansion  and contraction
+-   Easier manipulation of elements using  List interface methods
+
+## Declaration
+
+ArrayList is declared as:
+
+```
+import java.util.ArrayList;
+
+ArrayList<Type> listName = new ArrayList<>();
+
+```
+
+Here  `Type`  specifies the type of elements stored in the list.
+
+For example:
+
+```
+ArrayList<String> names = new ArrayList<>();
+ArrayList<Integer> numbers = new ArrayList<>();
+
+```
+
+## Adding Elements
+
+Elements are added using  `add()`:
+
+```
+listName.add(element);
+
+```
+
+For example:
+
+```
+names.add("John");
+names.add("Jane"); 
+
+```
+
+## Accessing Elements
+
+Elements are accessed using their index:
+
+```
+listName.get(index); 
+
+```
+
+For example:
+
+```
+String name = names.get(0); // John
+
+```
+
+## Removing Elements
+
+Elements can be removed using:
+
+-   `remove(index)`: Removes element at given index
+-   `remove(object)`: Removes specific object from the list
+
+```
+listName.remove(index);
+listName.remove(object);
+
+```
+
+## Size
+
+The  `size()`  method returns the number of elements:
+
+```
+int size = listName.size();
+```
