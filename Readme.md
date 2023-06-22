@@ -1772,3 +1772,130 @@ public class IgnitionSystem {
 ```
 
 The  `IgnitionSystem`  has a  `SparkPlug`  member variable, composing the  spark plug  as a part. This shows multiple levels of composition, with classes composing other classes.
+# Encapsulation in Java
+
+Encapsulation is a fundamental concept in object-oriented programming that involves combining data and behavior into a single unit called a class. Encapsulation allows you to control the access to the data and behavior of an object, ensuring that they are used only in the intended way. In Java, encapsulation is achieved through the use of  access modifiers  and getter and  setter methods.
+
+## Access Modifiers
+
+Access modifiers are keywords that determine the accessibility of a class, method, or variable. In Java, there are four types of access modifiers:
+
+-   `public`: The  `public`  modifier makes a class, method, or variable accessible from anywhere in the program.
+-   `private`: The  `private`  modifier makes a class, method, or variable accessible only within the same class.
+-   `protected`: The  `protected`  modifier makes a class, method, or variable accessible within the same class or any subclass of that class.
+-   `default`: If no access modifier is specified, the class, method, or variable has  default accessibility, which means it can be accessed within the same package.
+
+Access modifiers are used to enforce encapsulation by controlling the visibility of data and behavior.
+
+### Example
+
+```
+public class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+
+```
+
+In this example, we have a  `Person`  class with two private member variables:  `name`  and  `age`. The class also has getter and setter methods for both variables, which allow controlled access to the data.
+
+## Getter and Setter Methods
+
+Getter and setter methods are public methods used to access and modify the values of  private member variables. The  naming convention  for getter and setter methods is to prefix the name of the variable with "get" or "set", respectively, and use  camel case  for the rest of the name.
+
+### Example
+
+```
+public class Circle {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        if (radius < 0) {
+            throw new IllegalArgumentException("Radius cannot be negative");
+        }
+        this.radius = radius;
+    }
+
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+```
+
+In this example, we have a  `Circle`  class with a private member variable  `radius`. The class has getter and setter methods for the  `radius`  variable, which allows controlled access to the data. The  setter method  also performs  input validation  to ensure that the radius is not negative.
+
+## Encapsulation Challenge
+
+Let's say we have a  `BankAccount`  class with the following requirements:
+
+-   The account balance should not be directly accessible from outside the class.
+-   The account balance should be initialized to 0 when a new account is created.
+-   The class should have methods to deposit and withdraw from the  account balance.
+-   The class should have a method to display the account balance.
+
+### Solution
+
+
+```
+public class BankAccount {
+    private double balance;
+
+    public BankAccount() {
+        balance = 0;
+    }
+
+    public void deposit(double amount) {
+        if (amount < 0) {
+            throw new IllegalArgumentException("Amount cannot be negative");
+        }
+        balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        if (amount < 0) {
+            throw new IllegalArgumentException("Amount cannot be negative");
+        }
+        if (amount > balance) {
+            throw new IllegalArgumentException("Insufficient balance");
+        }
+        balance -= amount;
+    }
+
+    public void displayBalance() {
+        System.out.println("Account balance: " + balance);
+    }
+}
+
+```
+
+In this solution, we have a  `BankAccount`  class with a private member variable  `balance`. The class has a  default constructor  that initializes the balance to 0. The class also has deposit and  withdraw methods  that update the balance, and a  displayBalance method  that prints the balance to the console. The deposit and withdraw methods also perform input validation to ensure that the amount is not negative and that the account has sufficient balance for a withdrawal. The balance is not directly accessible from outside the class, enforcing encapsulation.
