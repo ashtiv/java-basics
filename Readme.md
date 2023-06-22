@@ -1451,3 +1451,62 @@ Tommy
 `this`  refers to the current object i.e. Dog instance.
 
 `super`  refers to the  super class  i.e. Animal. It allows the subclass to invoke the  superclass methods  and fields.
+
+# Method Overloading vs  Overriding  Recap
+
+## Method  Overloading
+
+Method overloading  is defining multiple methods with the same name but different parameters  **within the same class**.
+
+### Example
+
+```
+class Add{  
+  void add(int a, int b){
+    System.out.print(a+b);  
+   }    
+  void add(int a, int b, int c){  
+    System.out.print(a+b+c);
+  }
+}
+
+```
+
+Here we have two  `add()`  methods with different number of parameters. This is method overloading.
+
+Characteristics of Method Overloading:
+
+-   Same method name
+-   Different parameters
+-   Within same class
+-   Compile time polymorphism
+
+## Method Overriding
+
+Method overriding  is defining a method in the  child class  with the same name and arguments as in the parent class.
+
+### Example
+
+```
+class Animal{  
+  void eat(){
+    System.out.print("Animal is eating");
+  }
+}
+
+class Dog extends Animal{
+  void eat(){ 
+    System.out.print("Dog is eating"); 
+  }
+}
+
+```
+
+Here we have an  `eat()`  method in the parent  `Animal`  class and then we override it in the child  `Dog`  class.
+
+Characteristics of Method Overriding:
+
+-   Same method name and parameters
+-   Different implementation
+-   In child and parent classes
+-   Run time polymorphism
