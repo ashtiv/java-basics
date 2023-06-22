@@ -2072,3 +2072,64 @@ Arrays.fill(numbers, 0);
 int[] numbersCopy = Arrays.copyOf(numbers, numbers.length);
 
 ```
+# Finding a Match Using  Linear Search
+
+We can find a match in an array using a linear search:
+
+```
+int findMatch(int[] arr, int match) {
+  for (int i = 0; i < arr.length; i++) {
+     if (arr[i] == match) {
+       return i;  
+     }    
+  }
+  return -1;  // Not found    
+}
+
+```
+
+This searches each element in the array until it finds a match.
+
+Time complexity: O(n)
+
+# Using Binary Search
+
+We can perform a faster search using binary search:
+```
+int binarySearch(int[] arr, int key) {
+  int low = 0; 
+  int high = arr.length - 1;
+  
+  while (low <= high) {
+     int mid = (low + high) / 2;
+     if (key < arr[mid]) {
+        high = mid - 1;        
+     } else if (key > arr[mid]) {
+         low = mid + 1;         
+     } else {
+         return mid;           
+     }    
+  }
+  return -1;  
+}
+
+```
+
+This divides the array in half on each iteration, speeding up the search.
+
+Time complexity: O(log n)
+
+# Comparing Arrays
+
+We can compare two arrays for equality using a deep comparison:
+
+```
+boolean arraysEqual(int[] a, int[] b) {
+   if (a.length != b.length) return false;
+   for (int i = 0; i < a.length; i++) {
+      if (a[i] != b[i]) return false;
+   }
+   return true;      
+} 
+
+```
