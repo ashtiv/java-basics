@@ -1954,3 +1954,44 @@ a2.makeSound(); // Prints Making animal sound!
 ```
 
 Here  `a`  is referring to an  `Animal`  object but it is actually an instance of  `Dog`  class. So the  `Dog`  implementation of  `makeSound()`  is called - demonstrating runtime polymorphism.
+
+# Testing the  runtime type  using instanceof
+
+The  `instanceof`  operator in Java is used to test if an object is an instance of a class, interface, array etc.
+
+Syntax:
+
+`object instanceof Class`
+
+This returns  `true`  if the object is an instance of the specified type, else  `false`.
+
+Example:
+```
+Animal a = new Dog();
+
+if(a instanceof Animal){
+  System.out.println("a is an Animal"); // prints a is an Animal 
+}
+
+if(a instanceof Dog){
+  System.out.println("a is a Dog"); // prints a is a Dog
+}
+
+```
+
+Here  `a`  is a  `Dog`  object but refers to an  `Animal`  type. So both checks return  `true`.
+
+We can use  `instanceof`  to check the runtime type of a polymorphic reference. This allows us to cast the reference to the actual type and  call methods  specific to that type.
+```
+if(a instanceof Dog){
+  Dog d = (Dog) a; 
+  d.bark(); // we can call bark() after casting
+}
+
+```
+
+So in summary,  `instanceof`  allows us to:
+
+-   Check the runtime type of a  polymorphic reference
+-   Perform a typecast
+-   Call methods specific to that type
