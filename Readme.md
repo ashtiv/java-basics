@@ -2133,3 +2133,178 @@ boolean arraysEqual(int[] a, int[] b) {
 } 
 
 ```
+# Arrays Recap
+
+Arrays in Java are data structures used to store a fixed-size sequence of elements of the same type. They provide a convenient way to store and access multiple values of the same data type. Here is a recap of arrays in Java, along with examples:
+
+## Declaration and Initialization
+
+To declare an array, you specify the type of the elements followed by square brackets (`[]`) and then the array name. For example, to declare an array of integers:
+
+
+`int[] numbers;` 
+
+To initialize an array, you can either specify the size of the array or provide the initial values:
+
+
+`int[] numbers = new int[5];  // Initializes an array of size 5 with default values (0 for integers)
+int[] primes = {2, 3, 5, 7, 11};  // Initializes an array with the specified values` 
+
+## Accessing Array Elements
+
+You can access individual elements of an array using the index, which starts from 0. For example:
+
+
+```
+int[] numbers = {10, 20, 30, 40, 50};
+
+int firstNumber = numbers[0];  // Accesses the first element (10)
+int thirdNumber = numbers[2];  // Accesses the third element (30)
+```
+
+## Array Length
+
+The `length` property of an array gives you the number of elements it can hold. For example:
+
+
+```
+int[] numbers = {10, 20, 30, 40, 50};
+
+int length = numbers.length;  // Gives the length of the array (5)
+``` 
+
+## Looping through an Array
+
+You can use a loop, such as a `for` loop, to iterate over the elements of an array. For example:
+
+
+```
+int[] numbers = {10, 20, 30, 40, 50};
+
+for (int i = 0; i < numbers.length; i++) {
+    System.out.println(numbers[i]);
+}
+``` 
+
+This loop prints each element of the array on a new line.
+
+## Arrays as Method Parameters
+
+Arrays can be passed as parameters to methods. When you pass an array to a method, the method receives a reference to the array, allowing it to modify the array if needed. For example:
+
+
+```
+void modifyArray(int[] array) {
+    array[0] = 100;
+}
+
+int[] numbers = {10, 20, 30};
+modifyArray(numbers);
+System.out.println(numbers[0]);  // Prints 100
+``` 
+
+In this example, the `modifyArray` method changes the value of the first element of the array.
+
+These are some basic concepts related to arrays in Java. Arrays are widely used for storing and manipulating collections of data in a structured manner.
+
+# References Types vs Value Types
+
+In Java, variables can be categorized into two types: reference types and value types. Understanding the difference between these two types is crucial for working with Java effectively. Here's a detailed explanation with examples:
+
+## Value Types
+
+Value types, also known as primitive types, store the actual values. When you declare a value type variable, the variable directly holds the value itself. Examples of value types in Java include `int`, `double`, `boolean`, etc. Let's consider an example:
+
+
+```
+int x = 5;
+int y = x;
+y = 10;
+System.out.println(x);  // Outputs 5
+System.out.println(y);  // Outputs 10
+``` 
+
+In this example, the value of `x` is copied to `y`, and modifying `y` doesn't affect the value of `x`. Value types are independent of each other.
+
+## Reference Types
+Reference types, also known as objects, store references or addresses to the actual objects in memory. When you declare a reference type variable, the variable holds a memory address pointing to the location where the object is stored. Examples of reference types in Java include arrays, classes, and interfaces. Let's consider an example:
+
+
+```
+int[] array1 = {1, 2, 3};
+int[] array2 = array1;
+array2[0] = 10;
+System.out.println(array1[0]);  // Outputs 10
+System.out.println(array2[0]);  // Outputs 10
+``` 
+
+In this example, `array1` and `array2` both refer to the same memory location. Modifying `array2` also affects the value of `array1`. Reference types are not independent of each other; they refer to the same underlying object.
+
+## Passing Variables to Methods
+
+When you pass a value type variable to a method, a copy of the variable is passed, and modifications made within the method do not affect the original variable. Consider the following example:
+
+
+```
+void modifyValue(int value) {
+    value = 10;
+}
+
+int x = 5;
+modifyValue(x);
+System.out.println(x);  // Outputs 5
+``` 
+
+In this example, modifying `value` within the method does not change the value of `x` because `value` is a copy of `x`.
+
+When you pass a reference type variable to a method, the reference (memory address) is passed. Modifying the referenced object within the method affects the original object. Consider the following example:
+
+
+```
+void modifyArray(int[] array) {
+    array[0] = 10;
+}
+
+int[] numbers = {1, 2, 3};
+modifyArray(numbers);
+System.out.println(numbers[0]);  // Outputs 10
+``` 
+
+In this example, modifying the `array` within the method changes the value of `numbers[0]` because `array` and `numbers` both refer to the same array object.
+
+Understanding the distinction between value types and reference types is crucial for proper variable manipulation and passing in Java. It helps avoid confusion and ensures accurate results when working with variables in different contexts.
+
+# Variable Arguments (Varargs)
+
+In Java, variable arguments, or varargs, allow methods to accept a variable number of arguments of the same type. Varargs provide flexibility when you need to pass a different number of arguments to a method. Here's a detailed explanation with examples:
+
+## Syntax
+
+To define a method with variable arguments, you use an ellipsis (`...`) after the parameter type. The varargs parameter is treated as an array inside the method. Here's the syntax:
+
+
+`return_type method_name(type... parameter_name) {
+    // Method implementation
+}` 
+
+## Usage
+
+Varargs are useful when you want to pass a variable number of arguments to a method without explicitly defining an array. Let's consider an example where we want to find the maximum of multiple numbers:
+
+
+```
+int findMax(int... numbers) {
+    int max = Integer.MIN_VALUE;
+    for (int num : numbers) {
+        if (num > max) {
+            max = num;
+        }
+    }
+    return max;
+}
+
+int result1 = findMax(5, 10, 15);  // Calls findMax with 3 arguments
+int result2 = findMax(2, 4, 6, 8, 10);  // Calls findMax with 5 arguments
+``` 
+
+In this example, the `findMax` method accepts a variable number of `int` arguments using varargs. It finds
