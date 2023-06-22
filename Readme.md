@@ -1595,3 +1595,63 @@ String.format("%-10s", "Hi"); // "Hi        "
 String.format("%10s", "Hi"); //"        Hi"
 String.format("%^10s", "Hi"); // "   Hi     "
 ```
+# Another Look at the String
+
+Strings are immutable in Java, meaning they can't be changed once created. This leads to inefficiencies when performing string manipulations.
+
+Some string methods:
+
+-   `length()`  - Returns the length of the string
+-   `charAt()`  - Returns the character at the specified index
+-   `concat()`  - Concatenates two strings
+-   `compareTo()`  - Compares two strings lexicographically
+-   `startsWith()`/`endsWith()`  - Checks if string starts/ends with specified string
+-   `substring()`  - Extracts a substring from the specified indices
+-   `replace()`  - Replaces occurrences of one string with another
+-   `trim()`  - Removes whitespace from both ends of a string
+
+String objects are pooled - if two strings have the same value, they will point to the same object. This pooling helps save memory.
+
+## String Manipulation Methods
+
+Common string manipulation methods:
+
+-   `toLowerCase()`/`toUpperCase()`  - Converts string to lower/upper case
+-   `strip()`  - Removes leading/trailing whitespace
+-   `trim()`  - Removes leading and trailing whitespace
+-   `replace()`  - Replaces occurrences of a substring
+-   `split()`  - Splits a string into an array using a delimiter
+-   `join()`  - Joins an array of strings into one string using a delimiter
+
+Examples:
+```
+String s = " Hello World ";
+s = s.strip(); // "Hello World"
+s = s.trim(); // "Hello World"
+s = s.replace("e", "a"); // "Hallo World"
+String[] parts = s.split(" ");  
+String newString = String.join("-", parts);
+// newString is "Hallo-World"
+
+```
+
+## The StringBuilder class
+
+`StringBuilder`  is a mutable sequence of characters.  
+Since strings are immutable, concatenating strings creates new objects.  
+`StringBuilder`  avoids this overhead, making it more efficient for  string manipulation.
+
+```
+StringBuilder sb = new StringBuilder("Hello");
+
+sb.append(" ").append("World!");  
+// sb is now "Hello World!"
+
+sb.replace(0, 5, "Hi");
+// sb is now "Hi World!"
+
+```
+
+Other methods:  `insert()`,  `delete()`,  `reverse()`,  `capacity()`  etc.
+
+Call  `toString()`  to get a  `String`  from the  `StringBuilder`.
