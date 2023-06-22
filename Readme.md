@@ -1899,3 +1899,58 @@ public class BankAccount {
 ```
 
 In this solution, we have a  `BankAccount`  class with a private member variable  `balance`. The class has a  default constructor  that initializes the balance to 0. The class also has deposit and  withdraw methods  that update the balance, and a  displayBalance method  that prints the balance to the console. The deposit and withdraw methods also perform input validation to ensure that the amount is not negative and that the account has sufficient balance for a withdrawal. The balance is not directly accessible from outside the class, enforcing encapsulation.
+
+# Polymorphism in Java
+
+Polymorphism means "many forms" and it occurs when we have classes that are related by inheritance.
+
+## Method Overloading
+
+-   It is a  compile time  polymorphism.
+-   Methods have the same name but different parameters.
+-   Different signatures.
+
+```
+class Overloading{  
+  void sum(int a, int b){  
+    System.out.println(a+b);
+  }
+
+  void sum(int a, int b, int c){
+    System.out.println(a+b+c); 
+  }
+}
+
+```
+
+## Method Overriding
+
+-   It is a  runtime polymorphism.
+-   Methods have the same name and signature.
+-   Overridden in subclass.
+```
+class Animal{  
+  void makeSound(){
+    System.out.println("Making animal sound!");
+  }
+}
+
+class Dog extends Animal{
+  void makeSound(){
+    System.out.println("Bark! Bark!");
+  }
+}
+
+```
+
+## Polymorphism example
+```
+Animal a = new Dog();  
+a.makeSound(); // Prints Bark! Bark!
+
+Animal a2 = new Animal();  
+a2.makeSound(); // Prints Making animal sound!
+
+```
+
+Here  `a`  is referring to an  `Animal`  object but it is actually an instance of  `Dog`  class. So the  `Dog`  implementation of  `makeSound()`  is called - demonstrating runtime polymorphism.
