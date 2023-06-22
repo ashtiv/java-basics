@@ -1512,3 +1512,86 @@ Characteristics of Method Overriding:
 -   Run time polymorphism
 
 ![Screenshot from 2023-06-22 09-50-33](https://github.com/ashtiv/java-basics/assets/75435020/34903314-93da-4422-9edd-b921bcde303b)
+
+# The Text Block and other  Formatting Options  in  Java
+
+## Text Blocks
+
+Java 16  introduces  text blocks, which make multi-line strings easier to read and write. A  text block  is defined using `""":
+
+```
+String text = """
+This is a 
+ multi-line 
+ string""";
+
+```
+
+The three double quotes indicate that the following string can span multiple lines. The string retains the whitespace,  line breaks  and format.
+
+You can interpolate variables into a text block:
+
+```
+String name = "John";
+String greeting = """
+Hello 
+  $name!"""; 
+// greeting is "Hello  
+   John!"
+
+```
+
+The  `$`  indicates a variable to interpolate.
+
+Compare text blocks to concatenation:
+
+```
+String multiLine =  
+"Hello " +  
+"World!";
+
+String multiLine = """
+Hello  
+  World!""";
+
+```
+
+Text blocks are much more readable.
+
+## String Formatting
+
+-   String padding - Add spaces to make a string a certain length:
+
+```
+String s = String.format("%10s", "Hi");
+// s is "Hi         " 
+
+```
+
+Use  `-`  for left align,  `^`  for center and  `>`  for right align.
+
+-   Number formatting - Use format specifiers:
+
+```
+String.format("%d", 100);  // 100  
+String.format("%.2f", 1.23); // 1.23
+
+```
+
+-   Escaping - Use  `\`  to escape characters:
+
+```
+System.out.println("Hello\nWorld!");
+// Prints:
+// Hello  
+// World!
+
+```
+
+-   String alignment:
+
+```
+String.format("%-10s", "Hi"); // "Hi        "  
+String.format("%10s", "Hi"); //"        Hi"
+String.format("%^10s", "Hi"); // "   Hi     "
+```
