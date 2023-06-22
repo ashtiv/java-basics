@@ -1995,3 +1995,80 @@ So in summary,  `instanceof`  allows us to:
 -   Check the runtime type of a  polymorphic reference
 -   Perform a typecast
 -   Call methods specific to that type
+# Arrays
+
+Arrays are objects that store multiple values of the same data type.
+
+## Array Declaration
+
+We declare an array as:
+
+`dataType[] arrayName;`
+
+For example:
+
+`int[] numbers;`  
+`String[] names;`
+
+## Array Initialization
+
+We initialize an array either:
+
+-   With size:
+
+`dataType[] arrayName = new dataType[size];`
+
+For example:
+
+`int[] numbers = new int[5];`  
+`String[] names = new String[10];`
+
+-   With values:
+
+`dataType[] arrayName = {value1, value2, ...}`
+
+For example:
+
+`int[] numbers = {1, 2, 3};`  
+`String[] names = {"John", "Jane", "Jack"};`
+
+## Accessing Array Elements
+
+We access  array elements  using the index inside square brackets:
+
+`arrayName[index]`
+
+For example:
+
+`numbers[0]`  // First element  
+`names[2]`  // Third element
+
+## java.util.Arrays class
+
+The  `java.util.Arrays`  class provides several useful methods:
+
+-   `sort()`  - Sorts the elements of the given array
+
+```
+int[] numbers = {5, 2, 1, 8};
+Arrays.sort(numbers);
+// numbers is now {1, 2, 5, 8}
+
+```
+
+-   `fill()`  - Fills the given array with a specified value
+
+
+```
+Arrays.fill(numbers, 0);
+// numbers is now {0, 0, 0, 0}
+
+```
+
+-   `copyOf()`  - Creates a copy of the given array
+
+
+```
+int[] numbersCopy = Arrays.copyOf(numbers, numbers.length);
+
+```
