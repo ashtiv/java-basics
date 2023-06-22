@@ -2461,3 +2461,48 @@ The  `size()`  method returns the number of elements:
 ```
 int size = listName.size();
 ```
+# Arrays
+
+-   Arrays have fixed size. Once an array is created, you cannot change its size.
+-   If you want to change the size of an array, you need to create a new array and copy the elements.
+-   Arrays store  elements in  contiguous memory  locations.
+-   Accessing an element of an array has O(1) time complexity.
+-   Adding or removing an element has O(n) time complexity as other elements may need to be shifted.
+-   Arrays use less memory since they are stored as a contiguous block.
+
+We can declare and initialize an array in Java as:
+
+```
+int[] numbers = new int[5]; 
+
+```
+
+# ArrayLists
+
+-   ArrayLists have dynamic size. The size grows automatically when elements are added.
+-   We don't need to create a new ArrayList when the size changes.
+-   ArrayLists store  elements in an array behind the scenes, but automatically resizes the array when needed.
+-   Accessing an element has O(1) time complexity.
+-   Adding an element has O(1)  amortized time complexity  due to  array resizing.
+-   Removing an element has O(n) time complexity due to  shifting elements.
+-   ArrayLists use more memory since they need to store an array and a capacity value.
+
+We declare an ArrayList in Java as:
+
+```
+ArrayList<Integer> numbers = new ArrayList<>();
+
+```
+
+And add elements using:
+```
+numbers.add(5);
+numbers.add(10);
+//etc...
+
+```
+
+# Recommendation
+
+-   Use an ArrayList by default since it is more flexible and easy to use.
+-   Only use an array if  memory optimization  is critical.
