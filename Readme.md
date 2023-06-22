@@ -1655,3 +1655,120 @@ sb.replace(0, 5, "Hi");
 Other methods:  `insert()`,  `delete()`,  `reverse()`,  `capacity()`  etc.
 
 Call  `toString()`  to get a  `String`  from the  `StringBuilder`.
+
+# Composition
+
+Composition is a type of relationship between classes where one class contains another class as a member variable.
+
+## Key Points
+
+### Life cycle
+
+A composed object's  life cycle  is dependent on the composing object. When the composing object is destroyed, so is the  composed object.
+
+### "Has-a" relationship
+
+Composition denotes a "has-a" relationship between classes. The composing class "has-a" member of the composed class.
+
+### Reuse
+
+Composition allows objects to be reused by many composing objects. The composed object can be reused by many different composing objects.
+
+### Parent-child relationship
+
+Composition  creates a parent-child relationship between classes, where the  composing class  is the parent and composed class is the child.
+
+### Access
+
+Composed objects are accessible via a member variable of the composing object. The composing object can access methods and properties of the composed object.
+
+### Abstraction  and modularity
+
+Objects are composed to achieve abstraction and modularity. Complex classes can be broken down into smaller, focused classes and composed together.
+
+## Examples
+
+-   A Car has an Engine
+-   An Engine has an IgnitionSystem
+-   An  IgnitionSystem  has  SparkPlugs
+
+## Your Examples
+
+-   The  `Car`  class composes an  `Engine`  by having an  `engine`  member variable.
+-   The  `Engine`  class composes an  `IgnitionSystem`  by having an  `ignition`  member variable.
+-   The  `IgnitionSystem`  composes a  `SparkPlug`  by having a  `sparkPlug`  member variable.
+
+## In Summary
+
+Composition is a relationship where one class has a member variable of another class, denoting that it "has-a" that class as a part. This allows for abstraction, reuse and modularity in object-oriented design.
+
+## Composition Part 1
+
+The  `Car`  class composes an  `Engine`  to demonstrate a basic level of composition.
+
+```
+public class Car {
+    private Engine engine;
+    
+    public Car(Engine engine) {
+        this.engine = engine;  
+    }
+    
+    public void startEngine() {
+        engine.start();
+    }   
+}
+
+public class Engine {
+    public void start() {
+        System.out.println("Engine started!");    
+    }
+}
+
+```
+
+The  `Car`  class has an  `Engine`  member variable, showing that a car has an engine. When the car's engine is started, it calls the  `start()`  method on the composed  `Engine`  object.
+
+## Composition Part 2
+
+The  `Engine`  class now composes an  `IgnitionSystem`.
+
+```
+public class Engine {
+    private IgnitionSystem ignition;
+    
+    public Engine(IgnitionSystem ignition) {
+       this.ignition = ignition;    
+    }   
+      
+    public void start() {
+        ignition.ignite();     
+    }  
+}
+
+public class IgnitionSystem {
+   public void ignite() {
+       // ignite spark plugs
+   }    
+}
+
+```
+
+The  `Engine`  class has an  `IgnitionSystem`  member variable, demonstrating composition. When the engine is started, it calls the  `ignite()`  method on the composed  `IgnitionSystem`  object.
+
+## Composition Challenge
+
+The  `IgnitionSystem`  now composes a  `SparkPlug`  to demonstrate a deeper level of composition.
+```
+public class SparkPlug {
+   // ...
+}
+
+public class IgnitionSystem {
+   private SparkPlug sparkPlug;
+   // ...   
+}
+
+```
+
+The  `IgnitionSystem`  has a  `SparkPlug`  member variable, composing the  spark plug  as a part. This shows multiple levels of composition, with classes composing other classes.
