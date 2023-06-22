@@ -1510,3 +1510,5 @@ Characteristics of Method Overriding:
 -   Different implementation
 -   In child and parent classes
 -   Run time polymorphism
+
+![Screenshot from 2023-06-22 09-50-33](https://github.com/ashtiv/java-basics/assets/75435020/34903314-93da-4422-9edd-b921bcde303b)
