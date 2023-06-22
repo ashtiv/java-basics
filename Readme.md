@@ -2307,4 +2307,74 @@ int result1 = findMax(5, 10, 15);  // Calls findMax with 3 arguments
 int result2 = findMax(2, 4, 6, 8, 10);  // Calls findMax with 5 arguments
 ``` 
 
-In this example, the `findMax` method accepts a variable number of `int` arguments using varargs. It finds
+In this example, the `findMax` method accepts a variable number of `int` arguments using varargs. It finds the max element.
+## Declaration
+
+Two-dimensional arrays are arrays of arrays. They are declared as:
+
+```
+dataType[][] arrayName;
+
+```
+
+For example:
+```
+int[][] numbers;
+String[][] names;  
+double[][] values;
+
+```
+
+## Initialization
+
+They can be initialized using:
+
+-   A list of  array initializers:
+
+```
+int[][] numbers = { {1,2,3}, {4,5,6}, {7,8,9}};
+
+```
+
+-   The  `new`  operator:
+
+```
+int rows = 3;
+int cols = 4;
+int[][] numbers = new int[rows][cols];
+
+```
+
+This creates a  2D array  of 3 rows and 4 columns.
+
+## Access
+
+Elements are accessed using two indices:
+
+```
+numbers[row][col];
+
+```
+
+For example:
+```
+int value = numbers[1][2]; // Accesses element at row 1, col 2  
+
+```
+
+## Multi-dimensional Arrays
+
+Arrays of higher dimensions are also supported. For example:
+
+```
+int[][][] threeD; 
+
+```
+
+This is a three-dimensional array. Elements are accessed as:
+```
+threeD[x][y][z];
+
+```
+
+The time and  space complexity  of accessing an element is O(1). However, traversing the entire multi-dimensional array has  time complexity  O(n^d) where  `n`  is the size of one dimension and  `d`  is the number of dimensions.
