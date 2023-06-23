@@ -2506,3 +2506,135 @@ numbers.add(10);
 
 -   Use an ArrayList by default since it is more flexible and easy to use.
 -   Only use an array if  memory optimization  is critical.
+
+# LinkedList
+
+A LinkedList is a  data structure  that consists of nodes that are connected/linked to each other. Each node contains data and a reference to the next node.
+
+```
+// Node class 
+ class Node{
+    int data;
+    Node next;
+
+    public Node(int data){
+        this.data = data; 
+        this.next = null;
+    }
+}
+
+```
+
+The  LinkedList class  in Java implements the List and Deque interfaces. It provides an implementation of a  double linked list.
+
+## Operations
+
+-   Add: You can add elements to the list using the add() method. It can add at the beginning, end or at a specific index.
+    
+-   Remove: You can remove elements using the remove() method. You can remove by index or by value.
+    
+-   Get: You can get an element using the get() method and pass the index.
+    
+-   Size: You can get the size of the list using the size() method.
+    
+-   Iteration: You can iterate through the list using an  Iterator  or a for each loop.
+    
+
+## Example
+
+```
+LinkedList<String> fruits = new LinkedList<>();
+
+fruits.add("Apple");
+fruits.add("Orange");
+fruits.add("Banana");
+
+fruits.remove("Apple");
+
+String fruit = fruits.get(1);
+
+int size = fruits.size();
+
+for(String f : fruits){
+    System.out.println(f);
+}
+```
+# Iterators
+
+An Iterator allows you to traverse through a Collection by implementing the  Iterator interface.
+
+For a LinkedList, you can get an  Iterator  using the iterator() method:
+
+```
+LinkedList<String> fruits = new LinkedList<>();
+fruits.add("Apple");
+fruits.add("Orange");  
+
+Iterator<String> fruitIterator = fruits.iterator();
+
+```
+
+You can then use the hasNext() method to check if there are more elements, and next() to get the next element:
+
+java
+
+Copy
+
+```
+while(fruitIterator.hasNext()) {
+    String fruit = fruitIterator.next();
+    System.out.println(fruit); 
+}
+
+```
+
+This will print all the elements in the LinkedList.
+
+# LinkedList Challenge
+
+Implement a method reverse() to reverse a LinkedList:
+
+```
+public void reverse() {
+    Node current = head;
+    Node prev = null;
+    Node next = null;
+    
+    while(current != null){
+        next = current.next;
+        current.next = prev; 
+        prev = current;
+        current = next;
+    }
+    head = prev;
+}
+
+```
+
+This works by:
+
+-   Storing the next node
+-   Reversing the next pointer
+-   Moving the previous and current pointers
+-   When done, the previous node becomes the new head
+
+# LinkedList Challenge, Continued
+
+Implement a method to detect a cycle in a LinkedList:
+```
+public boolean hasCycle() {
+    Node slow = head;
+    Node fast = head;
+    
+    while(fast != null && fast.next != null){
+        slow = slow.next;
+        fast = fast.next.next;
+        if(slow == fast) return true;
+    }
+    
+    return false;
+}
+
+```
+
+This works by using 2 pointers, a slow and fast pointer. If a cycle is present, the fast pointer will eventually catch up to the slow pointer.
